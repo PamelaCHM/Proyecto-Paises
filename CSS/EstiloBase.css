@@ -1,0 +1,45 @@
+nav {
+    padding: 10%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #FFFFFF;
+    font-size: 100%;
+    font-weight: bold;
+    padding: 35px 50px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: relative;
+    left: 0;
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #f7e4bb;
+    transform: scale(1.01);
+}
+
+#active {
+    background-color: #FFD700;
+    color: #000000;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transform: scale(1);
+}
+
+h1{
+    text-align: center;
+    font-size: 400%;
+    font-style: italic;
+}
+
