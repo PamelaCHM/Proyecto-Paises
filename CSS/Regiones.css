@@ -42,7 +42,7 @@ input, button {
     padding: 20px;
 }
 
-.country-card {
+.cartaPais {
     width: calc(25% - 20px); /* 4 elementos por fila (25% del ancho - gap) */
     background: white;
     padding: 20px;
@@ -52,12 +52,12 @@ input, button {
     transition: transform 0.3s ease-in-out;
 }
 
-.country-card:hover {
+.cartaPais:hover {
     transform: scale(1.05);
     cursor: pointer;
 }
 
-.country-card img {
+.cartaPais img {
     width: 100%;
     height: 200px;
     border-radius: 5px;
@@ -72,14 +72,14 @@ img {
 
 /* Ajustar para tablets */
 @media (max-width: 1024px) {
-    .country-card {
+    .cartaPais {
         width: calc(50% - 20px); /* 2 elementos por fila */
     }
 }
 
 /* Ajustar para móviles */
 @media (max-width: 600px) {
-    .country-card {
+    .cartaPais {
         width: calc(100% - 20px); /* 1 elemento por fila */
     }
 }

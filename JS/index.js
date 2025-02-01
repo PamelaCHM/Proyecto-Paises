@@ -11,10 +11,10 @@ async function cargarPaises() {//Funciónasync para que se pueda usar await y fe
     const url = "https://restcountries.com/v3.1/all";
 
     try {
-        const response = await fetch(url);//Petición HTTP a la API
-        if (!response.ok) throw new Error("Error al obtener los países");
+        const respuesta = await fetch(url);//Petición HTTP a la API
+        if (!respuesta.ok) throw new Error("Error al obtener los países");
 
-        const data = await response.json();
+        const data = await respuesta.json();
                     //localStorage.setItem(key, value)
         localStorage.setItem("paises", JSON.stringify(data)); // Guardar en localStorage
         return data;                        //Stringfy convierte un objeto en una cadena de texto en formato JSON.Porque solo se pueden guardar cadenas de texto en localStorage
