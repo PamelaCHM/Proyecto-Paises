@@ -2,7 +2,6 @@
 const paises = obtenerPaises();
 
 if (paises) {
-    console.log("Usando datos de localStorage en BuscarPaises.html");
     mostrarPaisesPorRegion(paises); // Llamamos a la función que muestra los países
 }
 
@@ -13,7 +12,6 @@ function obtenerPaises() {
     if (!paises) {
         console.log("No hay datos en localStorage, cargando desde la API...");
         cargarPaises(); // Si no hay datos, llamamos a la función que los carga, esta en el index
-        return [];
     } else {
         return JSON.parse(paises); // Convertimos el string recibido en el localStorage a un array de objetos JSON
     }
@@ -35,14 +33,13 @@ function mostrarPaisesPorRegion(paises) {
           //A la hora de presionar sobre el país, se activa el evento click para que se llame la función mostrarDetalles y el modal
           cartaPais.addEventListener("click", () => {
             mostrarDetalles(pais.name.common);
-        });
+            });
         container.appendChild(cartaPais);
     });
 }
 
 // Mostrar detalles en un modal
 function mostrarDetalles(nombrePais) {
-    const paises = JSON.parse(localStorage.getItem("paises"));
     const pais = paises.find(p => p.name.common === nombrePais);
 
     if (!pais) return alert("No se encontraron detalles del país.");
@@ -64,7 +61,6 @@ function mostrarDetalles(nombrePais) {
 // Filtrar países por región usando `localStorage`
 function filtrarPorRegion() {
     const region = document.getElementById("region").value; // Obtener la región seleccionada
-    const paises = obtenerPaises(); // Obtener lista de países desde `localStorage`
 
     if (paises.length === 0) {
         alert("No hay datos de países. Intenta recargar la página.");

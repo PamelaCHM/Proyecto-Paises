@@ -3,8 +3,7 @@
 var paises = obtenerPaises();//recibe el JSON de países
 
 if (paises) {
-    console.log("Usando datos de localStorage en BuscarPaises.html");
-    mostrarResultados(paises); //Función que muestra todos los países
+    mostrarResultados(paises); //Función que muestra todos los países, la lista 
 }
 
 
@@ -48,7 +47,7 @@ function mostrarResultados(paises) {
 
 // Mostrar detalles en un modal
 function mostrarDetalles(nombrePais) {
-    const paises = JSON.parse(localStorage.getItem("paises"));//Los paso de una cadena string (asi se guiradó en localStorage) a un objeto JSON
+    
     const pais = paises.find(p => p.name.common === nombrePais);
 
     if (!pais) return alert("No se encontraron detalles del país.");
@@ -76,8 +75,6 @@ async function buscarPais() {
         mostrarResultados(paises); // Llamamos a la función que muestra los países
         return;
     }
-
-    const paises = await obtenerPaises(); // Obtener lista de países (del localStorage)
 
     // Buscar país en la lista (ignorando mayúsculas y minúsculas) ya el pais ingreado esta en minusculas
     const paisEncontrado = paises.filter(pais =>
